@@ -1,10 +1,13 @@
-// import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
-// const nextConfig: NextConfig = {
-//   /* config options here */
-// };
+const nextConfig: NextConfig = {
+  /* config options here */
+};
 
-// export default nextConfig;
+export default nextConfig;
+
+
+
 
 
 // import type { NextConfig } from "next";
@@ -31,6 +34,20 @@
 //       }
 //     ];
 //   },
+
+//   async proxy1(): Promise<(
+//     {
+//       path: string;
+//       destination: string;
+//       has?: undefined;
+//       missing?: undefined;
+//     } | {
+//       path: "/cms/:path*";
+//       has: [{ type: "cookie", key: "accessToken" }];
+//       missing: [{ type: "cookie", key: "accessToken" }];
+//       destination: "/cms/login";
+//     })[]>
+  
 // };
 
 // export default nextConfig;
@@ -56,28 +73,67 @@
 
 
 
-import type { NextConfig } from "next";
+// import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  async proxy() {
-    return [
-      // allow login page
-      {
-        path: "/cms/login",
-        destination: "/cms/login",
-      },
+// const nextConfig: NextConfig = {
+//   async proxy() {
+//     return [
+//       // allow login page
+//       {
+//         path: "/cms/login",
+//         destination: "/cms/login",
+//       },
 
-      // protect CMS routes
-      {
-        path: "/cms/:path*",
-        has: [{ type: "cookie", key: "accessToken" }],
-        missing: [{ type: "cookie", key: "accessToken" }],
-        destination: "/cms/login",
-      }
-    ];
-  },
-};
+//       // protect CMS routes
+//       {
+//         path: "/cms/:path*",
+//         has: [{ type: "cookie", key: "accessToken" }],
+//         missing: [{ type: "cookie", key: "accessToken" }],
+//         destination: "/cms/login",
+//       }
+//     ];
+//   },
+// };
 
-export default nextConfig;
+// export default nextConfig;
 
+
+
+
+
+
+
+// import type { NextConfig } from "next";
+
+// const nextConfig: NextConfig = {
+//   async rewrites() {
+//     return [
+//       // Cho phép truy cập login page
+//       {
+//         source: "/cms/login",
+//         destination: "/cms/login",
+//       },
+
+//       // Bảo vệ khu vực CMS
+//       {
+//         source: "/cms/:path*",
+//         has: [
+//           {
+//             type: "cookie",
+//             key: "accessToken",
+//           },
+//         ],
+//         missing: [
+//           {
+//             type: "cookie",
+//             key: "accessToken",
+//           },
+//         ],
+//         destination: "/cms/login",
+//       },
+//     ];
+//   },
+// };
+
+// export default nextConfig;
 

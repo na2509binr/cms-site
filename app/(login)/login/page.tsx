@@ -51,6 +51,7 @@ export default function LoginPage() {
                 {error && <p className="text-red-500">{error}</p>}
 
                 <button
+                    type="submit"
                     className="w-full bg-blue-600 text-white p-2 rounded mt-3"
                     onClick={handleLogin}
                     disabled={loading}
