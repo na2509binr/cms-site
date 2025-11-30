@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { BadgeAlert, Bean, ChevronLeft, ChevronRight, Handshake, Home, Settings, User, Users } from "lucide-react";
+import { BadgeAlert, Bean, ChartBarStacked, ChevronLeft, ChevronRight, Flag, Handshake, Home, Newspaper, Settings, User, Users } from "lucide-react";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(true);
@@ -49,6 +49,13 @@ export default function Sidebar() {
             <BadgeAlert size={20} />
             {open && <span>Thông tin chung Website</span>}
           </a>
+          {/* <a
+            href="/seo-meta"
+            className="flex items-center gap-3 p-2 rounded hover:bg-gray-700 transition"
+          >
+            <Flag size={20} />
+            {open && <span>SEO</span>}
+          </a> */}
           <a
             href="/product"
             className="flex items-center gap-3 p-2 rounded hover:bg-gray-700 transition"
@@ -56,6 +63,21 @@ export default function Sidebar() {
             <Bean size={20} />
             {open && <span>Sản phẩm</span>}
           </a>
+          <a
+            href="/category-product"
+            className="flex items-center gap-3 p-2 rounded hover:bg-gray-700 transition"
+          >
+            <ChartBarStacked  size={20} />
+            {open && <span>Thể loại sản phẩm</span>}
+          </a>
+          <a
+            href="/news"
+            className="flex items-center gap-3 p-2 rounded hover:bg-gray-700 transition"
+          >
+            <Newspaper size={20} />
+            {open && <span>Bài viết</span>}
+          </a>
+
           <a
             href="/member"
             className="flex items-center gap-3 p-2 rounded hover:bg-gray-700 transition"

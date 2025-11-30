@@ -13,7 +13,7 @@ export default function ConfigSitePage() {
 
   const fetchConfigSites = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/configsite/get-all`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/config-site/get-all`);
       const data = await res.json();
       setRecords(data);
     } catch (err) {
@@ -27,12 +27,6 @@ export default function ConfigSitePage() {
     fetchConfigSites();
   }, []);
 
-  const handleSelect = (record: ConfigSite) => setUpdateData(record);
-
-  const handleDelete = async (id: number) => {
-    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/configsite/delete?id=${id}`, { method: "DELETE" });
-    fetchConfigSites();
-  };
 
   return (
     <div className="space-y-8">
